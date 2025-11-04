@@ -36,8 +36,8 @@ defmodule MixLfe.MixProject do
 
   def deps do
     [
-      {:lfe, "~> 1.2"},
-      {:ltest, "0.10.0-rc6"},
+      {:lfe, "~> 2.2.0"},
+      {:ltest, "0.13.11"},
       {:color, "~> 1.0", hex: :erlang_color},
       {:lutil, "~> 0.10.0-rc6"},
       {:ex_doc, ">= 0.0.0", only: :dev}
