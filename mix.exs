@@ -36,7 +36,7 @@ defmodule MixLfe.MixProject do
 
   def deps do
     [
-      {:lfe, "~> 2.2.0"},
+      {:lfe, git: "https://github.com/diasbruno/lfe", tag: "ensure-directory-exists-before-writing-beam-file", override: true},
       {:ltest, "0.13.11"},
       {:color, "~> 1.0", hex: :erlang_color},
       {:lutil, "~> 0.10.0-rc6"},
