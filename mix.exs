@@ -43,9 +43,8 @@ defmodule MixLfe.MixProject do
 
   def deps do
     [
-      {:lfe, "~> 2.2",
-       compile: "make compile install-include install-beam install-bin PREFIX=$ERL_LIBS/lfe",
-       override: true},
+      {:rebar3_lfe, git: "https://github.com/diasbruno/rebar3_lfe", tag: "paths", override: true},
+      {:lfe, git: "https://github.com/diasbruno/lfe.git", tag: "ensure-directory-exists-before-writing-beam-file", app: false, override: true},
       {:ltest, "~> 0.13", compile: false, app: false},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
