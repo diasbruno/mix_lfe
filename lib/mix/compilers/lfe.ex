@@ -18,8 +18,9 @@ defmodule Mix.Compilers.Lfe do
   def compile(manifest, [{_, _} | _] = mappings, opts) do
     # Ensure the build lib path is in the code path for -include_lib directives
     ensure_lib_path_in_code_path()
-    
+
     callback = fn input, output ->
+      :io.format("lfe compile ~p~n", [input])
       module = input |> Path.basename(".lfe") |> String.to_atom()
       :code.purge(module)
       :code.delete(module)
@@ -37,7 +38,7 @@ defmodule Mix.Compilers.Lfe do
 
   defp ensure_lib_path_in_code_path do
     lib_path = Path.join(Mix.Project.build_path(), "lib") |> String.to_charlist()
-    
+
     unless lib_path in :code.get_path() do
       :code.add_patha(lib_path)
     end
